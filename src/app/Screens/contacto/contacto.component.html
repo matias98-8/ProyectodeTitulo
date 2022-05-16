@@ -1,0 +1,184 @@
+
+<app-navegacion></app-navegacion>
+
+
+<!--Historia -->
+
+
+<div class="container">
+  <section class="section"  >
+    <!---->
+    <form [formGroup]="form"  >
+        <div class="field">
+          <label class="label">Nombre completo</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" 
+            formControlName="name"
+            [class.is-danger]="nameFieldIsInvalid"
+            [class.is-success]="nameFieldIsValid"
+            name="name"
+            maxlength="15"
+           />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span *ngIf="nameFieldIsInvalid" class="icon is-small is-right">
+              <i class="fas fa-times"></i>
+          </span>
+          <span *ngIf="nameFieldIsValid" class="icon is-small is-right">
+             <i class="fas fa-check"></i> 
+          </span>
+            
+          </div>
+          <div *ngIf="form.get('name').errors && form.get('name').touched">
+            <p class="help is-danger" *ngIf="form.get('name').hasError('required')">
+              Es un campo requerido.
+            </p>
+          </div>
+          <div *ngIf="form.get('name').errors">
+            <p class="help is-danger" *ngIf="form.get('name').hasError('pattern')">
+              Solo se aceptan letras.
+            </p>
+          </div>
+
+          
+        </div>
+        
+  
+        <div class="field">
+          <label class="label">Correo electrónico</label>
+          <div class="control has-icons-left has-icons-right">
+            <input 
+            class="input" 
+            type="email"
+            [class.is-danger]="emailFieldIsInvalid"
+            [class.is-success]="emailFieldIsValid"
+             formControlName="email"
+             name = "email"
+        />
+            <span class="icon is-small is-left">
+              <i class="fas fa-at"></i>
+            </span>
+            <span *ngIf="emailFieldIsInvalid" class="icon is-small is-right">
+                <i class="fas fa-times"></i>
+            </span>
+            <span *ngIf="emailFieldIsValid" class="icon is-small is-right">
+               <i class="fas fa-check"></i> 
+            </span>
+          </div>
+          
+           <div *ngIf="emailFieldIsInvalid">
+          <p class="help is-danger" *ngIf="emailField.hasError('required')">
+            Es un campo requerido
+          </p>
+          <p class="help is-danger" *ngIf="emailField.hasError('email')">
+            No es un email
+          </p>
+          </div> 
+        </div>
+        <div class="field">
+          <label class="label">Celular</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" 
+            type="contacto"
+            formControlName="contacto"
+
+            [class.is-danger]="contactoFieldIsInvalid"
+            [class.is-success]="contactoFieldIsValid"
+           
+            name="contacto" 
+            maxlength="8"
+            
+            placeholder="+569"
+           />
+           <span class="icon is-small is-left">
+            <i class="fas fa-mobile-alt"></i>
+            </span>
+             <span *ngIf="contactoFieldIsInvalid" class="icon is-small is-right">
+            <i class="fas fa-times"></i>
+            </span>
+            <span *ngIf="contactoFieldIsValid" class="icon is-small is-right">
+           <i class="fas fa-check"></i> 
+           </span>
+          </div>     
+          <div *ngIf="form.get('contacto').errors && form.get('contacto').touched">
+            <p class="help is-danger" *ngIf="form.get('contacto').hasError('required')">
+  
+              Es un campo requerido.
+            </p>
+          </div>
+          <div *ngIf="form.get('contacto').errors">
+            <p class="help is-danger" *ngIf="form.get('contacto').hasError('pattern')">
+              Solo numeros.
+            </p>
+          </div>
+          <div *ngIf="form.get('contacto').errors">
+            <p class="help is-danger" *ngIf="form.get('contacto').hasError('minlength')">
+              Tiene que ser un número valido.
+            </p>
+          </div>
+         
+        </div>
+  
+        <div class="field">
+          <label class="label">Déjanos tu comentario aquí</label>
+          <div class="control">
+            <textarea class="textarea"
+             cols="30" 
+             rows="10" 
+             formControlName="text"
+            name="text"
+            [class.is-danger]="textFieldIsInvalid"
+            [class.is-success]="textFieldIsValid"
+            
+            
+            >
+            <span *ngIf="textFieldIsInvalid" class="icon is-small is-right">
+              <i class="fas fa-times"></i>
+              </span>
+              <span *ngIf="textFieldIsValid" class="icon is-small is-right">
+             <i class="fas fa-check"></i> 
+             </span>
+          </textarea>
+          
+            
+          </div>
+  
+  
+          <div *ngIf="form.get('text').errors && form.get('text').touched">
+            <p class="help is-danger" *ngIf="form.get('text').hasError('required')">
+  
+              Es un campo requerido.
+            </p>
+            <p class="help is-danger" *ngIf="form.get('text').hasError('maxlength')">
+              Solo se puede escribir hasta 10000 caracteres.
+            </p>
+            
+
+
+          </div>
+            <div *ngIf="form.get('text').errors">
+              <p class="help is-danger" *ngIf="form.get('text').hasError('minlength')">
+                Minimo se pueden escribir 50 caracteres.
+              </p>
+            </div>
+          
+        </div>
+  
+  
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" id="button" class="button is-primary"  [disabled]="form.invalid" (click)="enviocorreo(); refrescar();showModal();"  >Enviar</button>
+          </div>
+  
+        </div>
+      </form>
+  
+    </section>
+  </div>
+
+
+
+  <!--Termino de historia-->
+
+<app-footer></app-footer>

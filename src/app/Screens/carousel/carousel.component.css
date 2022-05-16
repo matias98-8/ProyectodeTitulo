@@ -1,0 +1,8 @@
+.picsum-img-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+.picsum-img-wrapper {
+  object-fit: cover;
+  filter: brightness(89%);
+}

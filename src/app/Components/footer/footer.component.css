@@ -1,0 +1,15 @@
+footer iframe {
+  max-width: 100%;
+  height: auto;
+  width: 600%;
+}
+a {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  filter: brightness(69%);
+}
+a:hover {
+  color: #606060;
+  filter: brightness(100%);
+}

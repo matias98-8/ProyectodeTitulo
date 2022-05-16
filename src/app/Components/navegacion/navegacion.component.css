@@ -1,0 +1,14 @@
+nav {
+  font-family: 'Montserrat', sans-serif;
+}
+.btn-color {
+  background-color: #278fc1;
+}
+.btn-link {
+  color: white;
+  filter: brightness(89%);
+}
+.btn-link:hover {
+  color: white;
+  filter: brightness(100%);
+}
