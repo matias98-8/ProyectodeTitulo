@@ -35,11 +35,10 @@ export class ContactoComponent implements OnInit {
     name: ['', [ Validators.pattern(/^[a-zA-Z ]+$/),Validators.required]],
     contacto: ['', [Validators.required, Validators.pattern(/^-?[0-9][^\.]*$/)]], 
     email: ['', [Validators.required, Validators.email, Validators.minLength(8)]],
-    text: ['', [Validators.required, Validators.maxLength(10000), Validators.minLength(50)]],
+    text: ['', [Validators.required, Validators.maxLength(10000), Validators.minLength(36)]],
   });
 
-    
-    84939828
+  
   }
   
   get emailField() {

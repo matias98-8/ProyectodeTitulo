@@ -12,3 +12,23 @@ html {
 .font1 {
   font-family: 'Assistant', sans-serif;
 }
+.breadcrumb {
+  font-size: 1rem;
+  white-space: nowrap;
+  background-color: white !important;
+  padding: 10px;
+  font-family: 'Assistant', sans-serif;
+}
+.breadcrumb a {
+  color: black !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  filter: brightness(69%) !important;
+}
+.breadcrumb-item.active {
+  color: #278fc1;
+}
+.breadcrumb a:hover {
+  color: #606060 !important;
+  filter: brightness(100%) !important;
+}
